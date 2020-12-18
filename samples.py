@@ -6,8 +6,8 @@ import argparse
 import os
 import sys
 
-import pickle
 import numpy as np
+import pickle
 import PIL.Image
 
 import config
@@ -24,7 +24,7 @@ parser.add_argument("-n", "--network",
                     help="Network ID (e.g. 00001-sgan-tf-1gpu).")
 parser.add_argument("-s", "--snapshot",
                     type=str,
-                    help="Snapshot (e.g. network-snapshot-000001).")
+                    help="Snapshot (e.g. network-snapshot-000001.pkl).")
 parser.add_argument("-d", "--dimensions",
                     type=int,
                     help="Specify image size (e.g. 256).",
@@ -46,7 +46,7 @@ else:
 
 if args.snapshot:
     snapshot = os.path.abspath("results/" + network + "/" + args.snapshot)
-    print("Specified snapshot: " + snapshot + "\n")
+    print("Snapshot: " + snapshot + "\n")
 
 else:
     snapshot = misc.locate_network_pkl(network, None)  # find latest snapshot.
@@ -99,7 +99,7 @@ def main():
 
     # Multiple samples.
     if args.multiple:
-        print("\n" + "Mode: generating", args.multiple, "samples...")
+        print("\n" + "Sampling mode: generating", args.multiple, "samples...")
         for x in range(0, args.multiple):
             # Pick latent vector.
             rnd = np.random.RandomState(x)
@@ -113,7 +113,7 @@ def main():
 
     # Single sample (default mode when --multiple not included).
     else:
-        print("\n" + "Mode: generating single sample...")
+        print("\n" + "Sampling mode: generating single example...")
         # Pick latent vector.
         rnd = np.random.RandomState(5)
         latents = rnd.randn(1, Gs.input_shape[1])
