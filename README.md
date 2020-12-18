@@ -14,7 +14,7 @@ Use `samples.py` to generate figures and samples from specified network model an
 
 Parameters:
 
---network, -n (required)\
+--network, -n (REQUIRED)\
 Define network ID, e.g., --network 00001-sgan-tf-1gpu.
 
 --dimensions, -d\
