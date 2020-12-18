@@ -1,6 +1,7 @@
 # stylegan-tools
 
-*Additional functionality for the NVlabs/stylegan repository, TensorFlow 1.x implementation.*
+*Additional functionality for the NVlabs/stylegan repository, TensorFlow 1.x implementation. This is an unofficial and unendorsed extension to the original (link to [license](https://github.com/NVlabs/stylegan/blob/master/LICENSE.txt)).*
+
 
 **Instructions**
 
